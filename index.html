@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  
+
+
+    <style>
+        .selection{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            padding: 7px;
+            background-color: rgb(172, 205, 237);
+            border-radius: 25px;
+            border:2px solid rgb(205, 223, 241)
+        }
+        .heading{
+            padding: 5px;
+            background-color: rgb(230, 232, 202);
+            border-radius: 10px;
+            border:2px solid rgb(174, 174, 162)
+        }
+        body{
+            background-image: url('./index\ background.jpg');
+            background-repeat: no-repeat;
+            background-size:cover;
+        }
+    </style>
+
+</head>
+<body class="container">
+   
+    <h3 class="d-flex justify-content-center mt-3 heading">WELCOME TO EMI CALCULATOR!!</h3>
+    <br><br>
+    <h4 class="selection mx-5">Please select the property for which you need to calculate EMI (Equated Monthly Installment)</h4>
+    <br><br>
+
+    <i class="fa-solid fa-down-from-dotted-line"></i>
+<h1 class="d-flex justify-content-center ">👇</h1>
+    <div class="text-center">
+    <input list="choice" name="choice" id="choice1" class="mx-5">
+<datalist id="choice">
+  <option value="CAR" id="car">
+  <option value="HOUSE" id="'house">
+  <option value="PERSONAL" id="house">
+</datalist>
+</div>
+<br>
+<div class="text-center">
+<button type="button"   onclick="select()" class="btn btn-lg btn-info mt-5">PROCEED..
+    </button>
+</div>
+
+<script>
+    function select()
+    {
+      
+         var ans= document.getElementById("choice1").value
+     
+
+         if(ans=='CAR')
+         {
+window.location.href="http://127.0.0.1:5500/caremi.html"
+         }
+         else if(ans=='HOUSE')
+         {
+window.location.href="http://127.0.0.1:5500/houseemi.html"
+         }
+         else if(ans=='PERSONAL')
+         {
+window.location.href="http://127.0.0.1:5500/personal.html"
+         }
+    }
+</script>
+
+
+
+
+</body>
+</html>

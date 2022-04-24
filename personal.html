@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMI CALCULATOR</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<style>
+    body{
+        background-image: url(./17545.jpg);
+        background-repeat: no-repeat;
+        background-size: 2000px 1000px;
+    }
+</style>
+
+</head>
+<body>
+    <div class="text-center">
+    <h1 class="mt-3">PERSONAL LOAN EMI CALCULATOR</h1>
+    <form action="" class="form-control">
+        <label for="name" class="form-label" >Enter your name:</label><br>
+      <input type="text" name="name" required id="per"><br>
+      <label for="name" class="form-label" >Enter your Father's name:</label><br>
+      <input type="text" required name="name" id="appaper"><br>
+      <label for="name" class="form-label" >Enter your Occupation:</label><br>
+      <input type="text" required name="name" id="vela"><br>
+      <label for="address" class="form-label">Enter your Address:</label><br>
+      <textarea  id="address" rows="4" cols="25"></textarea><br>
+<label for="principal" class="form-label">Enter Principal amount:</label><br>
+<input type="number" id="principal" >
+<br>
+<label for="time" class="form-label">Enter Time duration:</label><br>
+<input type="number" id="time">
+<br>
+<br>
+<button type="button" class=" btn btn-success" onclick="show()">SUBMIT</button>
+<br><br>
+<h4 id="dname"></h4>
+<h4 id="fname"></h4>
+<h4 id="occu"></h4>
+<h2 id="demo"></h2>
+<!-- <p id="demo"></p>
+<input type="submit" value="SUBMIT" onclick="myfunc()"> -->
+
+<!-- <h2 id="demo"></h2> -->
+
+    </form></div>
+<!-- 
+   CAR EMI Amount = [P x R x (1+R)^N]/[(1+R)^N-1] -->
+
+<script >
+function show(){
+var name= document.getElementById("per").value;
+var fname= document.getElementById("appaper").value;
+var occu= document.getElementById("vela").value;
+
+var amount1=document.getElementById("principal").value;
+
+      //   document.getElementById("demo").innerHTML=amount1;
+var amount=parseInt(amount1)
+       var time1=document.getElementById("time").value;
+var time_mon=parseInt(time1)
+var rate_of_i=0.0960;
+var d= Math.pow(1-rate_of_i,time_mon);
+var f= Math.pow(1-rate_of_i,time_mon-1);
+       var total = (amount) * (rate_of_i) * (d/f);
+       const total1 = total.toFixed(2);
+       document.getElementById("dname").innerHTML="Name: "+name;
+       document.getElementById("fname").innerHTML="Father's Name: "+fname;
+       document.getElementById("occu").innerHTML="Occupation: "+occu;
+       document.getElementById("demo").innerHTML="Your EMI Amount is: "+total1;
+
+}
+</script>
+</body>
+</html>
